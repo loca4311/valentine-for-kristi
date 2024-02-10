@@ -76,7 +76,7 @@ body .container {
 
 .cats {
   display: none;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
 }
 
