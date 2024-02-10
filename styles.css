@@ -116,6 +116,10 @@ body .container {
   flex-direction: row;
 }
 
+.button.yes {
+  margin-left: auto;
+}
+
 .hidden-message {
   display: none;
   margin-top: 20px;
