@@ -75,6 +75,7 @@ body .container {
 
 .cat_image {
   height: 106px;
+  width: 106px;
   transition: all 1s;
 }
 
