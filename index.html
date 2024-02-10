@@ -6,21 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Proposal</title>
+    <title>Valentine's Proposal for Kristi</title>
 </head>
 
 <body>
     <div class="container">
         <div class="Mainprompt">
+            <div class="us">
+              <img class="us_image" src="images/k.png" alt="">
+              <img class="us_image" src="images/t.png" alt="">
+            </div>
             <img class="image" src="images/cute.gif"></img>
             <div class="text">
-              <h1 class="hh" id="name">Привіт, красуне!</h1>
-              <p class="pp" id="question">Ти будеш моєю Валентинкою? </p>
+              <h1 class="hh" id="name">Привіт, моя красуне!</h1>
+              <p class="pp" id="question">Христинко, ти будеш моєю Валентинкою? </p>
             </div>
             <div class="buttons">
                 <button class="button no" id="no-button" onclick="showMessage('No')">Ні</button>
                 <button class="button yes"  onclick="showMessage('Yes')" id="yesButton">Так</button>
             </div>
+            <a class="chips-btn"  href="#">
+              <img class="cat_image" src="images/chips.png" alt="">
+           
+            </a>
+        </div>
+        <div class="cats">
+          <img class="cat_image" src="images/chips.png" alt="">
+          <img class="cat_image" src="images/puh.png" alt="">
         </div>
     </div>
     <script>
@@ -56,17 +68,122 @@
   }
 
   if (response === "Yes") {
-    document.getElementById("name").remove();
+    // document.getElementById("name").remove();
     document.getElementById("no-button").remove();
 
+    const topText = document.getElementById("name")
+    const usImages = document.querySelector('.us');
     const yesMessage = document.getElementById("question");
-    yesMessage.textContent = "Ти моя бусінка 😘";
+    const chipsBtn = document.querySelector('.chips-btn')
+    
+    chipsBtn.style.display = "block"
+    usImages.style.display = 'flex';
+    topText.style.display = "block";
+    topText.textContent = "Ти моя бусінка 😘"
+    yesMessage.textContent = "Кохаю безмежно, дякую що ти в мене є ❤️‍🔥";
     yesMessage.style.display = "block";
     yesMessage.style.fontStyle = "normal";
     document.getElementsByClassName("image")[0].src = "images/kiss.gif";
 
     document.getElementById("yesButton").remove();
   }
+
+//   document.querySelector(".chips-btn").addEventListener("click", function() {
+//   const main = document.querySelector('.Mainprompt')
+//   var catsContainer = document.querySelector(".cats");
+
+//   main.style.display = 'none'
+//   var limit = 200;
+//   catsContainer.innerHTML = ''
+//   for (var i = 0; i < limit; i++) {
+//     var newCat = document.createElement("img");
+//     newCat.className = "cat_image";
+//     newCat.src = i % 2 === 0 ? "images/chips.png" : "images/puh.png"; // Перемінна картинки змінюється на кожен не парний індекс
+//     newCat.alt = "";
+//     newCat.style.position = "absolute";
+//     newCat.style.opacity = 0;
+//     catsContainer.appendChild(newCat);
+//   }
+
+//   catsContainer.style.display = 'flex';
+
+//   var images = document.querySelectorAll(".cat_image");
+//   images.forEach(function(image, index) {
+//     if (index < limit) {
+//       const randomRotation = Math.random() * 360; // Генеруємо випадковий кут обертання
+//       image.style.transform = "rotate(" + randomRotation + "deg)"; // Застосовуємо обертання
+//       setTimeout(function() {
+//         image.style.opacity = 1;
+//         image.style.left = Math.random() * 90 + "%";
+//         image.style.top = Math.random() * 90 + "%";
+//         image.style.animation = "appear 1s ease forwards";
+//       }, index * 500); // Delay each image appearance by 500ms
+//     }
+//   });
+// });
+
+document.querySelector(".chips-btn").addEventListener("click", function() {
+  const main = document.querySelector('.Mainprompt')
+  var catsContainer = document.querySelector(".cats");
+
+  main.style.display = 'none'
+  var limit = 200;
+  catsContainer.innerHTML = '';
+  for (var i = 0; i < limit; i++) {
+    var newCat = document.createElement("img");
+    newCat.className = "cat_image";
+    newCat.src = i % 2 === 0 ? "images/chips.png" : "images/puh.png"; // Перемінна картинки змінюється на кожен не парний індекс
+    newCat.alt = "";
+    newCat.style.position = "absolute";
+    newCat.style.opacity = 0;
+    catsContainer.appendChild(newCat);
+  }
+
+  catsContainer.style.display = 'flex';
+
+  var images = document.querySelectorAll(".cat_image");
+  images.forEach(function(image, index) {
+    if (index < limit) {
+      const randomRotation = Math.random() * 360; // Генеруємо випадковий кут обертання
+      image.style.transform = "rotate(" + randomRotation + "deg)"; // Застосовуємо обертання
+
+      // Визначаємо випадкову початкову позицію кожної картинки
+      const startX = Math.random() * (catsContainer.offsetWidth - image.offsetWidth);
+      const startY = Math.random() * (catsContainer.offsetHeight - image.offsetHeight);
+      image.style.left = startX + 'px';
+      image.style.top = startY + 'px';
+
+      // Визначаємо випадковий напрямок і швидкість руху кожної картинки
+      let speedX = (Math.random() * 2 - 1) * 4;  // Випадкова швидкість по X
+      let speedY = (Math.random() * 2 - 1) * 4;  // Випадкова швидкість по Y
+
+      // Анімація руху
+      function move() {
+        let posX = parseFloat(image.style.left) + speedX;
+        let posY = parseFloat(image.style.top) + speedY;
+        if (posX < 0 || posX > catsContainer.offsetWidth - image.offsetWidth) {
+          speedX *= -1;
+          posX = parseFloat(image.style.left) + speedX;
+        }
+        if (posY < 0 || posY > catsContainer.offsetHeight - image.offsetHeight) {
+          speedY *= -1;
+          posY = parseFloat(image.style.top) + speedY;
+        }
+        image.style.left = posX + 'px';
+        image.style.top = posY + 'px';
+        requestAnimationFrame(move);
+      }
+      move();
+
+      setTimeout(function() {
+        image.style.opacity = 1;
+        image.style.animation = "appear 1s ease forwards";
+      }, index * 500); // Delay each image appearance by 500ms
+    }
+  });
+});
+
+
 }
     </script>
 </body>

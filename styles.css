@@ -15,13 +15,15 @@ body {
 .hh {
   -webkit-text-stroke: 2px #71004f;
   font-weight: 900;
-  font-size: 50px;
+  font-size: 45px;
+  margin: 10px 0;
 }
 .pp {
   -webkit-text-stroke: 2px #71004f;
   font-size: 30px;
   font-style: oblique;
   font-weight: 800;
+  padding: 10px 30px;
 }
 
 body .container {
@@ -29,19 +31,57 @@ body .container {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   text-align: center;
   background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.Mainprompt {
+  padding-bottom: 70px;
+}
+
 .image {
   height: calc(100vh - 600px);
 }
 
-.text {
-  height: 220px;
+.us {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.us_image {
+  height: calc(100vh - 650px);
+}
+
+.chips-btn {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+}
+
+.cat_image {
+  height: calc(100vh - 700px);
+  transition: all 1s;
+}
+
+.us_image:first-child {
+  margin-right: -48px;
+}
+
+.cats {
+  display: none;
+  width: 100vh;
+  height: 100vh;
+}
+
+.buttons {
+  height: 70px;
 }
 
 .buttons button {
@@ -67,9 +107,6 @@ body .container {
   flex-direction: row;
 }
 
-#no-button {
-}
-
 .hidden-message {
   display: none;
   margin-top: 20px;
@@ -89,7 +126,6 @@ body .container {
   }
 }
 
-// Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .pp {
     font-size: 40px;
@@ -100,7 +136,6 @@ body .container {
   }
 }
 
-// Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .pp {
     font-size: 40px;
@@ -109,9 +144,12 @@ body .container {
   .hh {
     font-size: 60px;
   }
+
+  .us {
+    top: 20px;
+  }
 }
 
-// X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .pp {
     font-size: 40px;
