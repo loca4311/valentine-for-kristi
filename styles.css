@@ -94,6 +94,7 @@ body .container {
 .buttons {
   height: 70px;
   padding-bottom: 100px;
+  width: 220px;
 }
 
 .buttons button {
