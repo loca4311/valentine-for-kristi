@@ -88,46 +88,12 @@
     document.getElementById("yesButton").remove();
   }
 
-//   document.querySelector(".chips-btn").addEventListener("click", function() {
-//   const main = document.querySelector('.Mainprompt')
-//   var catsContainer = document.querySelector(".cats");
-
-//   main.style.display = 'none'
-//   var limit = 200;
-//   catsContainer.innerHTML = ''
-//   for (var i = 0; i < limit; i++) {
-//     var newCat = document.createElement("img");
-//     newCat.className = "cat_image";
-//     newCat.src = i % 2 === 0 ? "images/chips.png" : "images/puh.png"; // Перемінна картинки змінюється на кожен не парний індекс
-//     newCat.alt = "";
-//     newCat.style.position = "absolute";
-//     newCat.style.opacity = 0;
-//     catsContainer.appendChild(newCat);
-//   }
-
-//   catsContainer.style.display = 'flex';
-
-//   var images = document.querySelectorAll(".cat_image");
-//   images.forEach(function(image, index) {
-//     if (index < limit) {
-//       const randomRotation = Math.random() * 360; // Генеруємо випадковий кут обертання
-//       image.style.transform = "rotate(" + randomRotation + "deg)"; // Застосовуємо обертання
-//       setTimeout(function() {
-//         image.style.opacity = 1;
-//         image.style.left = Math.random() * 90 + "%";
-//         image.style.top = Math.random() * 90 + "%";
-//         image.style.animation = "appear 1s ease forwards";
-//       }, index * 500); // Delay each image appearance by 500ms
-//     }
-//   });
-// });
-
 document.querySelector(".chips-btn").addEventListener("click", function() {
   const main = document.querySelector('.Mainprompt')
   var catsContainer = document.querySelector(".cats");
 
   main.style.display = 'none'
-  var limit = 50;
+  var limit = 100;
   catsContainer.innerHTML = '';
   for (var i = 0; i < limit; i++) {
     var newCat = document.createElement("img");
