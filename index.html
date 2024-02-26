@@ -99,13 +99,15 @@ document.querySelector(".chips-btn").addEventListener("click", function() {
   for (var i = 0; i < limit; i++) {
     var newCat = document.createElement("img");
     newCat.className = "cat_image";
-    if(i === 0) {
-      newCat.src = "images/chips.png"
-    } else if (i === 1) {
-      newCat.src = "images/puh.png";
-    } else {
-      newCat.src = "images/krukun.png"; 
-    }
+    // if(i === 0) {
+    //   newCat.src = "images/chips.png"
+    // } else if (i === 1) {
+    //   newCat.src = "images/puh.png";
+    // } else {
+    //   newCat.src = "images/krukun.png"; 
+    // }
+    newCat.src = i % 3 === 0 ? "images/krukun.png" : (i % 2 === 0 ? "images/chips.png" : "images/puh.png");
+
     // newCat.src = i % 2 === 0 ? "images/chips.png" : "images/puh.png" // Перемінна картинки змінюється на кожен не парний індекс
     newCat.alt = "";
     newCat.style.position = "absolute";
