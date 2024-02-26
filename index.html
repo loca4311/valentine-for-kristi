@@ -18,12 +18,12 @@
             </div>
             <img class="image" src="images/cute.gif"></img>
             <div class="text">
-              <h1 class="hh" id="name">Привіт, моє сонце!</h1>
-              <p class="pp" id="question">Хри, ти будеш моєю Валентинкою? </p>
+              <h1 class="hh" id="name">Привіт, моя дружино!</h1>
+              <p class="pp" id="question">Ти досі обіжаєшся?</p>
             </div>
             <div class="buttons">
-                <button class="button no" id="no-button" onclick="showMessage('No')">Ні</button>
-                <button class="button yes"  onclick="showMessage('Yes')" id="yesButton">Так</button>
+                <button class="button no" id="no-button" onclick="showMessage('No')">Так</button>
+                <button class="button yes"  onclick="showMessage('Yes')" id="yesButton">Ні</button>
             </div>
             <a class="chips-btn"  href="#">
               <img class="cat_image" src="images/chips.png" alt="">
@@ -33,6 +33,7 @@
         <div class="cats">
           <img class="cat_image" src="images/chips.png" alt="">
           <img class="cat_image" src="images/puh.png" alt="">
+          <img class="cat_image" src="images/krukun.png" alt="">
         </div>
     </div>
     <script>
@@ -62,7 +63,7 @@
     noButton.style.top = randomY + "px";
 
     document.getElementById("question").textContent =
-      "Альо, ти що там задумала?";
+      "Альо, обіжатися не гарно!";
     document.getElementById("name").style.display = "none";
 
   }
@@ -79,8 +80,8 @@
     chipsBtn.style.display = "block"
     usImages.style.display = 'flex';
     topText.style.display = "block";
-    topText.textContent = "Ти моя бусінка 😘"
-    yesMessage.textContent = "Кохаю безмежно, дякую що ти в мене є ❤️‍🔥";
+    topText.textContent = "Ти мій 😘"
+    yesMessage.textContent = "Кохаю безмежно і вітаю тебе з річницею ❤️‍🔥";
     yesMessage.style.display = "block";
     yesMessage.style.fontStyle = "normal";
     document.getElementsByClassName("image")[0].src = "images/kiss.gif";
@@ -98,7 +99,14 @@ document.querySelector(".chips-btn").addEventListener("click", function() {
   for (var i = 0; i < limit; i++) {
     var newCat = document.createElement("img");
     newCat.className = "cat_image";
-    newCat.src = i % 2 === 0 ? "images/chips.png" : "images/puh.png"; // Перемінна картинки змінюється на кожен не парний індекс
+    if(i === 0) {
+      newCat.src = "images/chips.png"
+    } else if (i === 1) {
+      newCat.src = "images/puh.png";
+    } else {
+      newCat.src = "images/krukun.png"; 
+    }
+    // newCat.src = i % 2 === 0 ? "images/chips.png" : "images/puh.png" // Перемінна картинки змінюється на кожен не парний індекс
     newCat.alt = "";
     newCat.style.position = "absolute";
     newCat.style.opacity = 0;
